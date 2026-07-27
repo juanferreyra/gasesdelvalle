@@ -53,7 +53,7 @@
     { symbol: "N₂", formula: "Nitrógeno", name: "Nitrógeno", tag: "Cervecerías · Inertización", grad: "linear-gradient(155deg,#17c3b2,#0a8f86)", uses: "Cerveza nitro, purga de líneas y barriles, atmósferas inertes y enfriamiento." },
     { symbol: "Ar", formula: "Argón", name: "Argón", tag: "Soldadura TIG/MIG", grad: "linear-gradient(155deg,#8a7bff,#4b3fb0)", uses: "Gas de protección en soldadura TIG y MIG de aceros, aluminio y otros metales." },
     { symbol: "CO₂", formula: "Dióxido de carbono", name: "Dióxido de carbono", tag: "Cervecerías · Soldadura", grad: "linear-gradient(155deg,#4a5568,#232b3a)", uses: "Carbonatación de cerveza y bebidas, soldadura MAG y sistemas de extinción." },
-    { symbol: "He", formula: "Helio", name: "Helio", tag: "Detección · Globos", grad: "linear-gradient(155deg,#f472b6,#a21caf)", uses: "Detección de fugas, refrigeración criogénica y globos." },
+    { symbol: "He", formula: "Helio", name: "Helio", tag: "Detección · Globos", grad: "linear-gradient(155deg,#f472b6,#a21caf)", uses: "Detección de fugas y globos." },
     { symbol: "Mix", formula: "Mezclas especiales", name: "Mezclas a medida", tag: "Personalizado", grad: "linear-gradient(155deg,#2bd6ff,#1b7bd6)", uses: "Preparamos mezclas según tu necesidad, por ejemplo Ar/CO₂ para soldadura." },
   ];
 
