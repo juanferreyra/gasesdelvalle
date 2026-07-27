@@ -238,18 +238,28 @@
         return;
       }
 
-      // Simulación de envío (sin backend). Integrar con un servicio real si se necesita.
-      const btn = form.querySelector('button[type="submit"]');
-      const original = btn.textContent;
-      btn.disabled = true;
-      btn.textContent = "Enviando…";
-      setTimeout(() => {
-        btn.disabled = false;
-        btn.textContent = original;
-        form.reset();
-        note.textContent = "¡Gracias! Recibimos tu solicitud. Un asesor te contactará a la brevedad.";
-        note.classList.add("ok");
-      }, 1000);
+      // Enviar el pedido por WhatsApp con los datos del formulario.
+      const WHATSAPP = "5492284594350"; // WhatsApp Business de Gases del Valle
+      const telefono = form.telefono.value.trim();
+      const gas = form.gas.value.trim();
+      const mensaje = form.mensaje.value.trim();
+
+      const texto =
+        "Hola Gases del Valle 👋 Quiero solicitar una cotización.\n\n" +
+        "Nombre y empresa: " + nombre + "\n" +
+        "Email: " + email + "\n" +
+        "Teléfono: " + (telefono || "-") + "\n" +
+        "Gas de interés: " + (gas || "-") + "\n\n" +
+        "Mensaje: " + (mensaje || "-");
+
+      const url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto);
+      const win = window.open(url, "_blank");
+      if (!win) window.location.href = url; // por si el navegador bloquea la ventana emergente
+
+      note.textContent =
+        "Te llevamos a WhatsApp para enviar tu solicitud. Si no se abre, escribinos al +54 9 2284 59-4350.";
+      note.classList.add("ok");
+      form.reset();
     });
 
     // Limpiar error al escribir
