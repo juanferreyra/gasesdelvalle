@@ -49,14 +49,12 @@
 
   /* ---------- Catálogo de gases (generado dinámicamente) ---------- */
   const gases = [
-    { symbol: "O₂", formula: "Oxígeno", name: "Oxígeno", tag: "Combustión · Corte", grad: "linear-gradient(155deg,#2a86ff,#0f4faf)", uses: "Oxicorte, soldadura, procesos de combustión y aplicaciones medicinales de alta pureza." },
-    { symbol: "N₂", formula: "Nitrógeno", name: "Nitrógeno", tag: "Inertización", grad: "linear-gradient(155deg,#17c3b2,#0a8f86)", uses: "Atmósferas inertes, envasado de alimentos, purga de líneas y enfriamiento criogénico." },
-    { symbol: "Ar", formula: "Argón", name: "Argón", tag: "Soldadura TIG/MIG", grad: "linear-gradient(155deg,#8a7bff,#4b3fb0)", uses: "Gas de protección en soldadura TIG y MIG, y en fabricación de electrónica y metales." },
-    { symbol: "CO₂", formula: "Dióxido de carbono", name: "Dióxido de carbono", tag: "Bebidas · Soldadura", grad: "linear-gradient(155deg,#4a5568,#232b3a)", uses: "Carbonatación de bebidas, soldadura MAG, invernaderos y sistemas de extinción." },
-    { symbol: "C₂H₂", formula: "Acetileno", name: "Acetileno", tag: "Oxicorte", grad: "linear-gradient(155deg,#ff7a45,#d63a2e)", uses: "Llama de alta temperatura para oxicorte y soldadura autógena de metales." },
-    { symbol: "H₂", formula: "Hidrógeno", name: "Hidrógeno", tag: "Procesos · Energía", grad: "linear-gradient(155deg,#38bdf8,#7c3aed)", uses: "Atmósferas reductoras, procesos químicos, energía y aplicaciones de laboratorio." },
-    { symbol: "He", formula: "Helio", name: "Helio", tag: "Detección · Criogenia", grad: "linear-gradient(155deg,#f472b6,#a21caf)", uses: "Detección de fugas, refrigeración criogénica, globos y cromatografía." },
-    { symbol: "Mix", formula: "Mezclas especiales", name: "Mezclas a medida", tag: "Personalizado", grad: "linear-gradient(155deg,#2bd6ff,#1b7bd6)", uses: "Formulamos mezclas certificadas según la especificación exacta de tu proceso." },
+    { symbol: "O₂", formula: "Oxígeno", name: "Oxígeno", tag: "Combustión · Corte", grad: "linear-gradient(155deg,#2a86ff,#0f4faf)", uses: "Oxicorte, soldadura y procesos de combustión industrial." },
+    { symbol: "N₂", formula: "Nitrógeno", name: "Nitrógeno", tag: "Cervecerías · Inertización", grad: "linear-gradient(155deg,#17c3b2,#0a8f86)", uses: "Cerveza nitro, purga de líneas y barriles, atmósferas inertes y enfriamiento." },
+    { symbol: "Ar", formula: "Argón", name: "Argón", tag: "Soldadura TIG/MIG", grad: "linear-gradient(155deg,#8a7bff,#4b3fb0)", uses: "Gas de protección en soldadura TIG y MIG de aceros, aluminio y otros metales." },
+    { symbol: "CO₂", formula: "Dióxido de carbono", name: "Dióxido de carbono", tag: "Cervecerías · Soldadura", grad: "linear-gradient(155deg,#4a5568,#232b3a)", uses: "Carbonatación de cerveza y bebidas, soldadura MAG y sistemas de extinción." },
+    { symbol: "He", formula: "Helio", name: "Helio", tag: "Detección · Globos", grad: "linear-gradient(155deg,#f472b6,#a21caf)", uses: "Detección de fugas, refrigeración criogénica y globos." },
+    { symbol: "Mix", formula: "Mezclas especiales", name: "Mezclas a medida", tag: "Personalizado", grad: "linear-gradient(155deg,#2bd6ff,#1b7bd6)", uses: "Preparamos mezclas según tu necesidad, por ejemplo Ar/CO₂ para soldadura." },
   ];
 
   const gasGrid = document.getElementById("gasGrid");

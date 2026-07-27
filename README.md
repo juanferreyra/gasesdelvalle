@@ -1,8 +1,8 @@
 # Gases del Valle — Sitio web
 
 Sitio web institucional para **Gases del Valle**, empresa dedicada a la carga y
-suministro de gases industriales (oxígeno, nitrógeno, argón, CO₂, acetileno,
-hidrógeno, helio y mezclas especiales).
+suministro de gases industriales (oxígeno, nitrógeno, argón, CO₂, helio y mezclas
+especiales), con foco en cervecerías y pequeñas y medianas producciones.
 
 ## Características
 
