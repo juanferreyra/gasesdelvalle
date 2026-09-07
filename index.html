@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gases del Valle — Carga y suministro de gases industriales. Oxígeno, nitrógeno, argón, CO₂, helio y mezclas. Ideal para cervecerías y pequeñas y medianas producciones, con atención cercana y entrega puntual." />
+  <meta name="theme-color" content="#0b1e3b" />
+  <title>Gases del Valle · Carga y suministro de gases industriales</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Progreso de scroll -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#inicio" class="brand" aria-label="Gases del Valle - Inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 44" width="26" height="34" fill="none">
+            <rect x="7" y="8" width="18" height="34" rx="9" fill="url(#cyl)" stroke="#7fdcff" stroke-width="1.4"/>
+            <rect x="12" y="2" width="8" height="8" rx="2.5" fill="#9fe8ff"/>
+            <circle cx="16" cy="24" r="4.5" fill="#0b1e3b" opacity=".35"/>
+            <defs>
+              <linearGradient id="cyl" x1="7" y1="8" x2="25" y2="42" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2bd6ff"/><stop offset="1" stop-color="#1b7bd6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="brand-text">Gases<span>del Valle</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#gases">Gases</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#industrias">Industrias</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#zona">Zona</a>
+        <a href="#contacto" class="btn-nav">Cotizar</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="inicio">
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <span class="pill reveal"><span class="pulse-dot"></span> Suministro industrial confiable desde el Valle</span>
+        <h1 class="reveal">Energía en estado <span class="grad-text">gaseoso</span> para tu industria</h1>
+        <p class="hero-sub reveal">
+          Cargamos, distribuimos y asesoramos en el uso de gases industriales.
+          Oxígeno, nitrógeno, argón, CO₂, helio y mezclas — pensados para cervecerías y pequeñas
+          y medianas producciones, con atención cercana y entrega puntual donde lo necesites.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="#contacto" class="btn btn-primary">Solicitar cotización <span aria-hidden="true">→</span></a>
+          <a href="#gases" class="btn btn-ghost">Ver catálogo de gases</a>
+        </div>
+
+        <div class="hero-stats reveal">
+          <div class="stat">
+            <span class="stat-num" data-count="15">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Años de experiencia</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="500">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Clientes industriales</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="99">0</span><span class="stat-plus">%</span>
+            <span class="stat-label">Entregas a tiempo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="cylinder-scene">
+          <div class="cyl cyl-1"><span class="cyl-cap"></span><span class="cyl-body">O₂</span></div>
+          <div class="cyl cyl-2"><span class="cyl-cap"></span><span class="cyl-body">N₂</span></div>
+          <div class="cyl cyl-3"><span class="cyl-cap"></span><span class="cyl-body">Ar</span></div>
+          <div class="gauge">
+            <svg viewBox="0 0 120 120" width="120" height="120">
+              <circle cx="60" cy="60" r="50" class="gauge-track"/>
+              <circle cx="60" cy="60" r="50" class="gauge-fill" id="gaugeFill"/>
+            </svg>
+            <div class="gauge-center"><strong id="gaugeVal">200</strong><small>bar</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#nosotros" class="scroll-cue" aria-label="Desplazarse hacia abajo">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- Marquee de industrias -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Cervecerías</span><span>·</span><span>Metalurgia</span><span>·</span><span>Automotriz</span><span>·</span><span>Construcción</span><span>·</span>
+      <span>Cervecerías</span><span>·</span><span>Metalurgia</span><span>·</span><span>Automotriz</span><span>·</span><span>Construcción</span><span>·</span>
+      <span>Cervecerías</span><span>·</span><span>Metalurgia</span><span>·</span><span>Automotriz</span><span>·</span><span>Construcción</span><span>·</span>
+      <span>Cervecerías</span><span>·</span><span>Metalurgia</span><span>·</span><span>Automotriz</span><span>·</span><span>Construcción</span><span>·</span>
+    </div>
+  </div>
+
+  <!-- Nosotros -->
+  <section class="section" id="nosotros">
+    <div class="container grid-2">
+      <div class="reveal">
+        <span class="eyebrow">Quiénes somos</span>
+        <h2>Un socio estratégico en cada carga de gas</h2>
+        <p class="lead">
+          En <strong>Gases del Valle</strong> nos especializamos en la recarga y el suministro de gases
+          para la producción. Combinamos un trato cercano, controles de seguridad en cada carga y logística
+          propia para que tu producción nunca se detenga por falta de gas.
+        </p>
+        <ul class="check-list">
+          <li>Recarga de cilindros de alta y baja presión con controles de seguridad.</li>
+          <li>Ideales para cervecerías y pequeñas y medianas producciones que están arrancando.</li>
+          <li>Asesoramiento cercano en selección, manejo seguro y ahorro de consumo.</li>
+          <li>Flota propia con entregas programadas y servicio de emergencia.</li>
+        </ul>
+        <a href="#servicios" class="btn btn-primary">Conocé nuestros servicios</a>
+      </div>
+      <div class="reveal feature-grid">
+        <div class="feature-card">
+          <div class="feature-ic">🛡️</div>
+          <h3>Seguridad en cada carga</h3>
+          <p>Procesos y equipos con controles de seguridad para el manejo de gases a presión.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-ic">🍺</div>
+          <h3>Pensado para cervecerías</h3>
+          <p>CO₂ para carbonatación y N₂ para tus barriles y líneas, en cargas a la medida de tu producción.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-ic">🚚</div>
+          <h3>Logística puntual</h3>
+          <p>Entregas programadas y reposición automática para que nunca te quedes sin stock.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-ic">🧪</div>
+          <h3>Mezclas a medida</h3>
+          <p>Preparamos mezclas de gases según la especificación exacta de tu aplicación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gases -->
+  <section class="section section-alt" id="gases">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Catálogo</span>
+        <h2>Gases que impulsan tu producción</h2>
+        <p class="section-sub">Pasá el cursor sobre cada gas para ver sus aplicaciones. Trabajamos con cilindros de distintos tamaños.</p>
+      </div>
+      <div class="gas-grid" id="gasGrid" role="list">
+        <!-- Se genera con JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Servicios</span>
+        <h2>Todo lo que tu operación necesita</h2>
+        <p class="section-sub">Recarga de gases, insumos y asesoramiento para tu producción.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card reveal">
+          <div class="service-num">01</div>
+          <h3>Recarga de cilindros</h3>
+          <p>Recarga rápida y segura de cilindros de todos los tamaños, con inspección y trazabilidad por unidad.</p>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-num">02</div>
+          <h3>Insumos de soldadura a pedido</h3>
+          <p>Conseguimos lo que necesitás para soldar: guantes, alambre, electrodos y más, a pedido.</p>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-num">03</div>
+          <h3>Mezclas especiales</h3>
+          <p>Preparamos mezclas para soldadura y atmósferas controladas según lo que tu producción necesite.</p>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-num">04</div>
+          <h3>Alquiler de equipos</h3>
+          <p>Cilindros, reguladores, manifolds y equipos de aplicación en modalidad de alquiler.</p>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-num">05</div>
+          <h3>Asesoría técnica</h3>
+          <p>Auditamos tu consumo y optimizamos instalaciones para reducir pérdidas y costos.</p>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-num">06</div>
+          <h3>Servicio de emergencia</h3>
+          <p>Reposición urgente para que una falta de gas nunca frene tu línea de producción.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industrias -->
+  <section class="section section-alt" id="industrias">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Sectores</span>
+        <h2>Industrias que confían en nosotros</h2>
+        <p class="section-sub">Adaptamos el gas y el servicio a los requisitos de cada rubro.</p>
+      </div>
+      <div class="industry-grid">
+        <div class="industry reveal"><span class="industry-ic">🍺</span><h4>Cervecerías</h4><p>CO₂ para carbonatación y N₂ para tus barriles y líneas.</p></div>
+        <div class="industry reveal"><span class="industry-ic">⚙️</span><h4>Metalurgia y soldadura</h4><p>Gases y asesoramiento para trabajos de corte y soldadura.</p></div>
+        <div class="industry reveal"><span class="industry-ic">🚗</span><h4>Automotriz</h4><p>Gases para soldadura en talleres del rubro automotor.</p></div>
+        <div class="industry reveal"><span class="industry-ic">🏗️</span><h4>Construcción</h4><p>Gases para oxicorte y soldadura en obra.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso -->
+  <section class="section" id="proceso">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Cómo trabajamos</span>
+        <h2>Del pedido a tu planta en 4 pasos</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-step reveal">
+          <div class="tl-dot">1</div>
+          <h3>Cotización</h3>
+          <p>Nos contás qué gas y volumen necesitás; te enviamos una propuesta clara en horas.</p>
+        </div>
+        <div class="tl-step reveal">
+          <div class="tl-dot">2</div>
+          <h3>Recarga y control</h3>
+          <p>Cargamos cada cilindro y verificamos su presión y estado antes de la entrega.</p>
+        </div>
+        <div class="tl-step reveal">
+          <div class="tl-dot">3</div>
+          <h3>Entrega segura</h3>
+          <p>Transporte especializado y entrega programada directamente en tu ubicación.</p>
+        </div>
+        <div class="tl-step reveal">
+          <div class="tl-dot">4</div>
+          <h3>Reposición continua</h3>
+          <p>Monitoreamos tu consumo y coordinamos la próxima carga antes de que te falte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zona de entregas -->
+  <section class="section section-alt" id="zona">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Cobertura</span>
+        <h2>Zona de entregas</h2>
+        <p class="section-sub">Entregamos y tomamos pedidos en la zona norte del Gran Buenos Aires.</p>
+      </div>
+      <div class="zona-grid">
+        <div class="zona-map reveal">
+          <iframe
+            title="Mapa de la zona de entregas de Gases del Valle"
+            src="https://www.google.com/maps?q=Malvinas%20Argentinas%2C%20Buenos%20Aires%2C%20Argentina&z=10&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <div class="zona-info reveal">
+          <h3>Localidades que cubrimos</h3>
+          <ul class="zona-list">
+            <li>José C. Paz</li>
+            <li>Moreno</li>
+            <li>Malvinas Argentinas</li>
+            <li>Escobar</li>
+            <li>Tigre</li>
+            <li>Pilar</li>
+          </ul>
+          <p class="zona-note">¿Tu localidad no está en la lista? Escribinos y coordinamos según el pedido.</p>
+          <a href="https://wa.me/5492284594350?text=Hola%20Gases%20del%20Valle%2C%20quiero%20consultar%20si%20llegan%20a%20mi%20zona." class="btn btn-primary" target="_blank" rel="noopener">Consultar por mi zona</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Contacto -->
+  <section class="section section-cta" id="contacto">
+    <div class="container grid-2 cta-inner">
+      <div class="reveal">
+        <span class="eyebrow light">Contacto</span>
+        <h2>Pedí tu cotización sin compromiso</h2>
+        <p class="lead">Completá el formulario y te llevamos a WhatsApp con tu pedido listo para enviar. ¿Es urgente? Escribinos y coordinamos hoy mismo.</p>
+        <ul class="contact-list">
+          <li><span>💬</span> <a href="https://wa.me/5492284594350" target="_blank" rel="noopener">WhatsApp +54 9 2284 59-4350</a></li>
+          <li><span>✉️</span> <a href="mailto:ventas@gasesdelvalle.com">ventas@gasesdelvalle.com</a></li>
+          <li><span>📍</span> Parque Industrial del Valle, Argentina</li>
+          <li><span>🕗</span> Lun a Vie 8:00–18:00 · Emergencias 24 h</li>
+        </ul>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="field">
+          <label for="nombre">Nombre y empresa</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez — Metalúrgica del Sur" required />
+          <span class="error" data-for="nombre"></span>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@empresa.com" required />
+            <span class="error" data-for="email"></span>
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+54 9 ..." />
+          </div>
+        </div>
+        <div class="field">
+          <label for="gas">Gas de interés</label>
+          <select id="gas" name="gas">
+            <option value="">Seleccioná un gas</option>
+            <option>Oxígeno (O₂)</option>
+            <option>Nitrógeno (N₂)</option>
+            <option>Argón (Ar)</option>
+            <option>Dióxido de carbono (CO₂)</option>
+            <option>Helio (He)</option>
+            <option>Mezcla especial</option>
+            <option>No estoy seguro / Necesito asesoría</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Contanos volumen estimado, tipo de cilindro y frecuencia."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Enviar por WhatsApp</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-text">Gases<span>del Valle</span></span>
+        <p>Carga y suministro de gases industriales con calidad, seguridad y entrega a tiempo.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navegación</h5>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#gases">Gases</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#industrias">Industrias</a>
+      </div>
+      <div class="footer-col">
+        <h5>Gases</h5>
+        <a href="#gases">Oxígeno</a>
+        <a href="#gases">Nitrógeno</a>
+        <a href="#gases">Argón</a>
+        <a href="#gases">Dióxido de carbono</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <a href="mailto:ventas@gasesdelvalle.com">ventas@gasesdelvalle.com</a>
+        <a href="https://wa.me/5492284594350" target="_blank" rel="noopener">WhatsApp +54 9 2284 59-4350</a>
+        <span>Parque Industrial del Valle</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Gases del Valle. Todos los derechos reservados.</span>
+      <span>Diseñado para la industria.</span>
+    </div>
+  </footer>
+
+  <a href="#contacto" class="wa-float" aria-label="Escribinos por WhatsApp">
+    <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true" fill="#fff">
+      <path d="M16.02 3.2c-7.06 0-12.8 5.74-12.8 12.8 0 2.26.6 4.46 1.72 6.4L3.2 28.8l6.6-1.73a12.7 12.7 0 0 0 6.22 1.59h.01c7.05 0 12.8-5.74 12.8-12.8 0-3.42-1.33-6.63-3.75-9.05a12.7 12.7 0 0 0-9.06-3.61zm0 23.3h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.6 10.6 0 0 1-1.62-5.63c0-5.86 4.77-10.62 10.63-10.62 2.84 0 5.5 1.11 7.51 3.12a10.55 10.55 0 0 1 3.11 7.51c0 5.86-4.77 10.62-10.62 10.62z"/>
+      <path d="M19.11 17.21c-.29-.15-1.72-.85-1.99-.94-.27-.1-.46-.15-.65.15-.19.29-.75.94-.92 1.13-.17.19-.34.22-.63.07-.29-.15-1.23-.45-2.34-1.44-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.65-1.57-.89-2.15-.23-.56-.47-.48-.65-.49h-.55c-.19 0-.51.07-.77.36-.27.29-1.01.99-1.01 2.41 0 1.42 1.04 2.8 1.18 2.99.15.19 2.04 3.12 4.95 4.37.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.55-.34z"/>
+    </svg>
+    <span class="wa-float-label">Escribinos</span>
+  </a>
+
+  <button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
